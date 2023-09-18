@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "NOTAS",
+    "shortcut": "",
+    "tag": [
+        "\\begin{tcolorbox}[colbacktitle=yellow!50!white,coltitle=black,colframe=yellow!75!black,fonttitle=\\bfseries\\itshape,title=Nota]",
+        "\t",
+        "\\end{tcolorbox}"
+    ],
+    "trigger": "NOTEBOX"
+}

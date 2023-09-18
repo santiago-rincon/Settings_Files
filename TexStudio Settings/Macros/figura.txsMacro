@@ -1,0 +1,19 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "FIGURA",
+    "shortcut": "",
+    "tag": [
+        "\\begin{figure}[H]",
+        "\t\\centering",
+        "\t\\shadowbox{\\includegraphics[width=0.8\\textwidth]{}}",
+        "\t\\caption{}",
+        "\t\\label{}",
+        "\\end{figure}"
+    ],
+    "trigger": "FIG"
+}

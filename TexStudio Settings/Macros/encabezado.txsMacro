@@ -1,0 +1,24 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "ENCABEZADO",
+    "shortcut": "",
+    "tag": [
+        "\\begin{center}",
+        "\\bf\\fontsize{24}{0}{\\selectfont{\\textit{Guía de laboratorio I}}}\\\\",
+        "\\vspace{0.2cm}",
+        "\\bf\\fontsize{11}{0}{\\selectfont{\\textit{Docente: Ing. Cristián Santiago Rincón Caicedo}}}\\\\",
+        "\\vspace{0.2cm}",
+        "\\bf\\fontsize{10}{0}{\\selectfont{\\textit{Fundación Impacto Social Sostenible}}}\\\\",
+        "\\vspace{0.2cm}",
+        "\\bf\\fontsize{10}{0}{\\selectfont{\\textit{Fusagasugá, Colombia}}}\\\\",
+        "\\vspace{0.1cm}",
+        "\\it\\fontsize{9}{0}{\\selectfont{cristiansantiago260501@gmail.com\\\\}}",
+        "\\end{center}"
+    ],
+    "trigger": "ENCABEZADO"
+}

@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "COLUMNAS",
+    "shortcut": "Ctrl+M,Ctrl+C",
+    "tag": [
+        "\\begin{multicols}{2}",
+        "\t",
+        "\\end{multicols}"
+    ],
+    "trigger": "COLUMNS"
+}

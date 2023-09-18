@@ -1,0 +1,19 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "TABLAS",
+    "shortcut": "",
+    "tag": [
+        "\\begin{table}[H]",
+        "\t\\centering",
+        "\t",
+        "\t\\caption{}",
+        "\t\\label{}",
+        "\\end{table}"
+    ],
+    "trigger": "TABLE"
+}
