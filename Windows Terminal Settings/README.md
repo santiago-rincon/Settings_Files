@@ -93,32 +93,29 @@ Install-Module -Name PSReadLine -AllowClobber -Force
 Set-PSReadLineOption -PredictionSource History
 ```
 
-## Otros alias 
-
-Para añadir los siguientes alias se debe añadir una nueva línea con el comando correspondiente al final del archivo _C:\\Users\\\<usuario\>\\OneDrive\\Documents\\WindowsPowerShell\\Microsoft.PowerShell_profile.ps1_.
-
-- **grep**
-
-```powershell
-New-Alias -Name grep -Value "Select-String -Pattern"
-```
-
- **which**
-
-```powershell
-Function Which-Command {
-	param ([string]$CommandName)
-	(Get-Command $CommandName).Path
-}
-New-Alias -Name which -Value Which-Command
-```
-
 ## Archivos de configuración
 
 En este repositorio se encuentra los siguientes archivos de configuración, en cada archivo se encuentra comentada la ruta donde debe ser copiado:
 - settings.json (Configuración de la terminal)
 - WindowsPowerShell\Microsoft.PowerShell_profile.ps1 (Archivo de perfil tema e con iconos configurado)
 - amro.omp.json (Archivo del tema actualmente en uso Path: C:\\Users\\\<usuario\>\\AppData\\Local\\Programs\\oh-my-posh\\themes\\amro.omp.json)
+
+## Instalación de algúnos programas Unix para Windows
+Los siguinetes programas se descargan de la página de [GNUWin32](https://gnuwin32.sourceforge.net/packages.html) y [exiftools](https://exiftool.org/), se recomienda descargar el binario. Se debe añadir al ***PATH*** la siguiente ruta: C:\\Program Files (x86)\\GnuWin32\\bin
+Para el caso de ***exiftools*** se debe descomprimir el binario en dicha ruta y renombrarlo como "exiftool" en caso de ser necesario.
+
+![Descargas de GNUWin32](./assets/gnuwin32.png)
+
+- [awk](https://gnuwin32.sourceforge.net/packages/gawk.htm)
+- [diff](https://gnuwin32.sourceforge.net/packages/diffutils.htm)
+- [exiftools](https://exiftool.org/)
+- [file](https://gnuwin32.sourceforge.net/packages/file.htm)
+- [grep](https://gnuwin32.sourceforge.net/packages/grep.htm)
+- [sed](https://gnuwin32.sourceforge.net/packages/sed.htm)
+- [tree](https://gnuwin32.sourceforge.net/packages/tree.htm)
+- wget (vía choco `choco install wget`)
+- [which](https://gnuwin32.sourceforge.net/packages/which.htm)
+
 
 ## Lista de shortcuts 
 
