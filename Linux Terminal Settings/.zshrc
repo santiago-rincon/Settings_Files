@@ -49,7 +49,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Manual configuration
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+PATH=/bin:/home/santiago/.local/bin:/opt:/opt/foxitsoftware/foxitreader:/opt/nodejs/bin:/root/.fzf/bin:/root/.local/bin:/sbin:/snap/bin:/usr/bin:/usr/games:/usr/local/bin:/usr/local/games:/usr/local/sbin:/usr/sandbox/:/usr/sbin:/usr/share/games:/home/santiago/.cargo/bin:/opt/mdcat
 
 # Manual aliases
 alias ll='lsd -lh --group-dirs=first'
@@ -59,6 +59,7 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='batcat'
 alias grep='grep --color=always'
+alias icat='kitty +kitten icat'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -69,19 +70,29 @@ source /usr/share/zsh-sudo/sudo.plugin.zsh
 
 # Functions
 function mkt(){
-	mkdir {nmap,content,exploits,scripts}
+	mkdir {nmap,content,exploits}
 }
 
 # Extract nmap information
 function extractPorts(){
-	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+	ports="$(cat $1 | /usr/bin/grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+	ip_address="$(cat $1 | /usr/bin/grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
 	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
 	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
 	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
 	echo $ports | tr -d '\n' | xclip -sel clip
 	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
 	cat extractPorts.tmp; rm extractPorts.tmp
+}
+
+function set-target(){
+	if [ $# -eq 1 ]; then
+	echo $1 > /home/santiago/.config/bin/target
+	elif [ $# -gt 2 ]; then
+	echo "settarget [IP] [NAME] | settarget [IP]"
+	else
+	echo $1 $2 > ~/.config/bin/target
+	fi
 }
 
 # Set 'man' colors
@@ -125,6 +136,13 @@ function rmk(){
 	shred -zun 10 -v $1
 }
 
+function nmap-scan(){
+	nmap -p- --open -sS --min-rate 5000 $1 -vvv -n -Pn -oG allPorts
+	ports="$(cat allPorts | /usr/bin/grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+	nmap -p$ports -sCV $1 -oN targeted
+}
+
 # Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
 (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+export EDITOR=/opt/nvim
