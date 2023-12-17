@@ -111,6 +111,7 @@ Para el caso de ***exiftools*** se debe descomprimir el binario en dicha ruta y 
 - [exiftools](https://exiftool.org/)
 - [file](https://gnuwin32.sourceforge.net/packages/file.htm)
 - [grep](https://gnuwin32.sourceforge.net/packages/grep.htm)
+- [mdcat](https://github.com/swsnr/mdcat/releases)
 - [sed](https://gnuwin32.sourceforge.net/packages/sed.htm)
 - [tree](https://gnuwin32.sourceforge.net/packages/tree.htm)
 - wget (vía choco `choco install wget`)
