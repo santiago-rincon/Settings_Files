@@ -62,3 +62,4 @@ bspc config border_width 0.2
 xsetroot -cursor_name left_ptr &
 
 ~/.config/naturalScrolling.sh
+libinput-gestures-setup autostart start
