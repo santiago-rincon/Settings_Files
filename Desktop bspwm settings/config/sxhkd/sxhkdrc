@@ -152,13 +152,13 @@ super + shift + s
 ###############
 
 @Print
-        screenshot select
+        ~/.config/bin/screenshot select
 
 @Print + ctrl
-        screenshot
+        ~/.config/bin/screenshot
 
 @Print + alt
-        screenshot window
+        ~/.config/bin/screenshot window
 
 #####################
 # Teclas de función #
