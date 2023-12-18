@@ -32,4 +32,5 @@ cp .p10k.zsh ~/.p10k.zsh
 sudo cp .p10k_root.zsh /root/.p10k.zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+dpkg -i lsd_1.0.0_amd64.deb
 echo 'Realizar instalación manual de NVChad https://nvchad.com/docs/quickstart/install'
