@@ -9,7 +9,7 @@ current_user=$(whoami)
 sudo apt update
 sudo apt install zsh zsh-syntax-highlighting zsh-autosuggestions bat -y
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-sudo ln -s -f /home/$current_user/.local/bin/kitty.app/bin/kitty /bin/kitty
+sudo ln -s -f /home/$current_user/.local/kitty.app/bin/kitty /bin/kitty
 sudo cp Hack.zip /usr/share/fonts
 cd /usr/share/fonts
 sudo unzip /usr/share/fonts/Hack.zip
@@ -17,7 +17,7 @@ sudo rm /usr/share/fonts/Hack.zip
 sudo usermod --shell /usr/bin/zsh root
 sudo usermod --shell /usr/bin/zsh $current_user
 rm ~/.zshrc &>/dev/null
-cd $cwd
+cd "$cwd"
 cp .zshrc ~/.zshrc
 sudo ln -s -f /home/$current_user/.zshrc /root/.zshrc
 sudo mkdir /usr/share/zsh-sudo
@@ -32,5 +32,5 @@ cp .p10k.zsh ~/.p10k.zsh
 sudo cp .p10k_root.zsh /root/.p10k.zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-dpkg -i lsd_1.0.0_amd64.deb
+sudo dpkg -i lsd_1.0.0_amd64.deb
 echo 'Realizar instalación manual de NVChad https://nvchad.com/docs/quickstart/install'
